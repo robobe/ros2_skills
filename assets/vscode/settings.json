@@ -1,0 +1,31 @@
+{
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "bash",
+            "icon": "terminal-bash",
+            "args": [
+                "--rcfile",
+                "${workspaceFolder}/env.sh"
+            ]
+        }
+    },
+    "python.autoComplete.extraPaths": [
+        "${workspaceFolder}/install/**",
+        "/opt/ros/jazzy/lib/python3.12/site-packages/",
+        "/opt/ros/jazzy/local/lib/python3.12/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/install/**",
+        "/opt/ros/jazzy/lib/python3.12/site-packages/",
+        "/opt/ros/jazzy/local/lib/python3.12/dist-packages/",
+    ],
+    "files.associations": {
+        "*.world": "xml",
+        "*.xacro": "xml",
+        "*.urdf": "xml",
+        "*.sdf": "xml"
+    },
+    "[xml]": {
+        "editor.defaultFormatter": "redhat.vscode-xml"
+    }
+}
