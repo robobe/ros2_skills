@@ -74,6 +74,13 @@ Copy launch and config assets from the source assets folder into the bringup pac
 ```bash
 cp -r assets/launch/* <workspace_name>/src/<prefix>_bringup/launch/
 cp -r assets/config/* <workspace_name>/src/<prefix>_bringup/config/
+cp assets/ros/gz.launch.yaml <workspace_name>/src/<prefix>_bringup/launch/gz.launch.yaml
+```
+
+If `assets/ros/gz.launch.yaml` contains `<prefix>` placeholders, replace every occurrence with the real package prefix after copying. For example:
+
+```bash
+sed -i "s/<prefix>/<actual_prefix>/g" <workspace_name>/src/<prefix>_bringup/launch/gz.launch.yaml
 ```
 
 Ensure `<prefix>_bringup/CMakeLists.txt` installs the package assets so they are available after `colcon build`:
@@ -106,8 +113,6 @@ If the package is built successfully, the workspace-level `install/` directory w
 Create if missing:
 - `src/`
 - `include/<prefix>_application/`
-- `launch/`
-- `config/`
 
 Inside `<prefix>_application/`, create:
 - `__init__.py`
@@ -116,6 +121,10 @@ Inside `<prefix>_application/`, create:
 ### remove folder from `<prefix>_description` and `<prefix>_bringup` if it exists:
 - `src/`
 - `include/`
+
+### remove folder from `<prefix>_application` if it exists:
+- `launch/`
+- `config/`
 
 ## Hybrid Python support for `<prefix>_application`
 For the `<prefix>_application` package, also enable Python package installation.
