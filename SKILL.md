@@ -64,6 +64,12 @@ Create if missing:
 - `worlds/`
 - `src/`
 
+Copy the default Gazebo world asset into the package:
+
+```bash
+cp assets/ros/empty.sdf <workspace_name>/src/<prefix>_gazebo/worlds/empty.sdf
+```
+
 ### `<prefix>_bringup`
 Create if missing:
 - `launch/`
