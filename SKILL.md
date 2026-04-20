@@ -236,6 +236,16 @@ After creating the workspace and packages, set up root files and initialize vers
    git commit -m "Initial ROS 2 workspace setup"
    ```
 
+## Final validation
+
+As the last step of the workflow, run the scaffold validation test from the skill repository root:
+
+```bash
+./tests/test_generated_workspace.sh <workspace_name> <prefix>
+```
+
+The workflow is not complete unless this test passes. If it fails, fix the generated workspace and rerun the test before reporting the result.
+
 ## Constraints
 - do not modify files outside the target workspace
 - do not overwrite existing files without warning
