@@ -3,6 +3,9 @@ source /opt/ros/jazzy/setup.bash
 source install/setup.bash
 echo '🐢 Environment ready!'
 
+# log format
+export RCUTILS_CONSOLE_OUTPUT_FORMAT="[{severity}] [{time}] [{name}]: {message}"
+
 # bash key bindings
 # replace bringup with full bringup name
 bind '"\C-b": "ros2 launch <prefix>_bringup "'
